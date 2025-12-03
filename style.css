@@ -141,4 +141,34 @@ footer {
 }
 
 footer a { color: var(--accent); text-decoration: none; }
+/* --- NUEVO: ESTILOS DE HERENCIA --- */
+
+.testimonios {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* DEMOSTRACIÓN DE HERENCIA:
+   Al poner 'font-family', 'color' y 'font-style' en el PADRE (.caja-herencia),
+   todos los párrafos de adentro (HIJOS) los heredarán automáticamente.
+*/
+.caja-herencia {
+    /* Propiedades que se heredan a los hijos: */
+    font-family: 'Georgia', serif; /* Cambiamos la fuente para que se note */
+    font-style: italic;            /* Todo el texto se vuelve cursiva */
+    color: #4b5563;                /* Un gris elegante */
+    
+    /* Propiedades de la caja (no se heredan): */
+    background-color: #f9fafb;
+    border: 2px dashed var(--primary); /* Usamos tu variable de color */
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.autor {
+    font-weight: bold;
+    color: var(--primary); /* Sobrescribimos el color heredado solo para el autor */
+    font-style: normal;    /* Quitamos la cursiva solo para el autor */
 }
