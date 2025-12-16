@@ -1,133 +1,40 @@
-/* --- CONFIGURACIÓN ESTILO KAAN JOURNEY PRO --- */
-
-:root {
-    /* Tus colores de marca */
-    --primary: #0e7490;    /* Turquesa oscuro */
-    --accent: #0ea5e9;     /* Azul brillante */
-    --text: #0f172a;       /* Texto oscuro */
-    --light: #f0f9ff;      /* Fondo azulito claro */
-    --white: #ffffff;
-    --shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra suave */
+button:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(14, 116, 144, 0.15);
 }
 
-body {
-    font-family: 'Inter', sans-serif; /* Tu fuente moderna */
-    background-color: var(--light);
-    color: var(--text);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+/* Optional: small responsive tweak */
+@media (max-width: 600px) {
+    .grid-tarjetas {
+        gap: 12px;
+    }
+
+    .card {
+        padding: 20px;
+        min-width: 200px;
+    }
 }
+/* --- POSICIONAMIENTO (NIVEL 7) --- */
 
-/* Header estilo Glass (simplificado) */
-header {
-    background-color: var(--white);
-    color: var(--primary);
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-h1 {
-    margin: 0;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-/* Navegación */
-nav {
-    background-color: var(--primary);
-    padding: 15px;
-    text-align: center;
-}
-
-nav a {
-    color: var(--white);
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #a5f3fc; /* Brillo al pasar el mouse */
-}
-
-/* Contenedor Principal */
-main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* Imágenes bonitas */
-img {
-    max-width: 100%;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    margin-top: 20px;
-}
-
-/* --- AQUÍ ESTÁ LO QUE PIDE LA TAREA (Nuevas Propiedades) --- */
-
-.servicios h2 {
-    text-align: center;
-    color: var(--primary);
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-
-/* Grid de Tarjetas (Flexbox) */
-.grid-tarjetas {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap; /* Para que funcione en celular */
-}
-
-/* Estilo de las Tarjetas (Card Design) */
+/* 1. Hacemos que la tarjeta sea el "mapa" de referencia */
 .card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: var(--shadow);
-    flex: 1; /* Para que midan lo mismo */
-    min-width: 250px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid transparent;
+    position: relative; 
 }
 
-/* Efecto Hover (La tarjeta flota) */
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(14, 116, 144, 0.2);
-    border-color: var(--accent);
-}
-
-.icono {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-/* Tarjeta Destacada (La del medio) */
-.card.destacado {
-    border-top: 5px solid var(--primary);
-    background-color: #fcfdfe;
-}
-
-/* Botones */
-button {
-    background-color: var(--primary);
+/* 2. Creamos la etiqueta flotante */
+.oferta {
+    position: absolute; /* Se sale del flujo normal */
+    top: -15px;         /* Se sube un poco fuera de la tarjeta */
+    right: -15px;       /* Se mueve a la derecha */
+    
+    background-color: #ef4444; /* Rojo llamativo */
     color: white;
-    border: none;
-    padding: 10px 25px;
+    padding: 8px 15px;
     border-radius: 50px;
     font-weight: bold;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-button:hover {
-    background-color
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transform: rotate(10deg); /* Un toquecito inclinado */
+    z-index: 10; /* Para asegurar que flote encima de todo */
 }
