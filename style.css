@@ -1,14 +1,17 @@
-/* --- ESTILO KAAN JOURNEY: EDICIÓN PRO (Fusión) --- */
-
+/* --- 1. CONFIGURACIÓN GLOBAL --- */
 :root {
     /* Colores inspirados en tu página Web-Kaan-Journey */
-    --primary: #004d40;     /* Verde petroleo oscuro elegante */
-    --secondary: #00695c;   /* Verde azulado para botones */
-    --accent: #ffab00;      /* Dorado para ofertas y detalles */
-    --text: #263238;        /* Gris oscuro para texto */
-    --light: #f1f8e9;       /* Fondo muy suave */
+    --primary: #004d40;     
+    --secondary: #00695c;   
+    --accent: #ffab00;      
+    --text: #263238;        
+    --light: #f1f8e9;       
     --white: #ffffff;
     --shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box; /* IMPORTANTE: Para que el padding no rompa el diseño */
 }
 
 body {
@@ -19,7 +22,7 @@ body {
     background-color: var(--light);
 }
 
-/* --- HEADER Y NAV (Estilo Oscuro Premium) --- */
+/* --- HEADER Y NAV --- */
 header {
     background-color: var(--primary);
     color: var(--white);
@@ -35,11 +38,11 @@ h1 {
 }
 
 nav {
-    background-color: #00352c; /* Un tono más oscuro que el header */
+    background-color: #00352c;
     display: flex;
     justify-content: center;
     padding: 15px;
-    position: sticky; /* Se queda pegado arriba */
+    position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
@@ -55,9 +58,7 @@ nav a {
     transition: color 0.3s;
 }
 
-nav a:hover {
-    color: var(--accent);
-}
+nav a:hover { color: var(--accent); }
 
 nav .btn-nav {
     background-color: var(--accent);
@@ -74,27 +75,23 @@ main {
     padding: 40px 20px;
 }
 
-/* Hero Section: Hacemos que la imagen se vea espectacular */
 .hero {
     text-align: center;
     margin-bottom: 50px;
 }
 
-.hero h2 {
-    font-size: 2.5rem;
-    color: var(--primary);
-}
+.hero h2 { font-size: 2.5rem; color: var(--primary); }
 
 .hero img {
     width: 100%;
     height: 400px;
-    object-fit: cover; /* Recorta la imagen para que llene el espacio sin estirarse */
+    object-fit: cover;
     border-radius: 12px;
     box-shadow: var(--shadow);
-    filter: brightness(0.9); /* Un toquecito más oscuro para elegancia */
+    filter: brightness(0.9);
 }
 
-/* --- ESTADÍSTICAS (Tu tarea de Flexbox) --- */
+/* --- ESTADÍSTICAS --- */
 .estadisticas-flex {
     display: flex;
     justify-content: space-around;
@@ -103,7 +100,7 @@ main {
     color: white;
     padding: 40px;
     border-radius: 12px;
-    margin: -30px 20px 50px 20px; /* Truco visual: se sube sobre el contenido */
+    margin: -30px 20px 50px 20px;
     position: relative;
     box-shadow: var(--shadow);
     flex-wrap: wrap;
@@ -121,6 +118,26 @@ main {
     margin-bottom: 40px;
 }
 
+/* ESTILOS DEL EJERCICIO (CONTENEDOR Y CAJA) */
+/* Agregamos esto aquí para que funcione con el HTML del ejercicio */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.caja {
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 30%; /* Tamaño escritorio */
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Estilos de tus tarjetas originales (por si acaso) */
 .grid-tarjetas {
     display: flex;
     gap: 30px;
@@ -138,21 +155,11 @@ main {
     text-align: center;
     transition: transform 0.3s ease;
     border: 1px solid #eee;
-    
-    /* Para el Nivel 7 (Position) */
     position: relative; 
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow);
-}
-
-.card.destacado {
-    border: 2px solid var(--accent);
-    background-color: #fffde7; /* Fondo amarillito muy suave */
-}
-
+.card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+.card.destacado { border: 2px solid var(--accent); background-color: #fffde7; }
 .icono { font-size: 4rem; margin-bottom: 20px; }
 
 button {
@@ -169,12 +176,11 @@ button {
 
 button:hover { background-color: var(--accent); color: var(--primary); }
 
-/* --- ETIQUETA OFERTA (Nivel 7) --- */
+/* --- OTROS ELEMENTOS (Oferta, Testimonios, Newsletter) --- */
 .oferta {
     position: absolute;
-    top: -15px;
-    right: -15px;
-    background-color: #d32f2f; /* Rojo intenso */
+    top: -15px; right: -15px;
+    background-color: #d32f2f;
     color: white;
     padding: 8px 15px;
     border-radius: 50px;
@@ -184,7 +190,6 @@ button:hover { background-color: var(--accent); color: var(--primary); }
     z-index: 10;
 }
 
-/* --- TESTIMONIOS (Nivel 4) --- */
 .testimonios { margin: 60px 0; text-align: center;}
 
 .caja-herencia {
@@ -192,28 +197,21 @@ button:hover { background-color: var(--accent); color: var(--primary); }
     font-style: italic;            
     color: #546e7a;                
     background-color: var(--white);
-    border-left: 5px solid var(--accent); /* Borde elegante a la izquierda */
+    border-left: 5px solid var(--accent);
     padding: 40px;
     max-width: 700px;
     margin: 0 auto;
     box-shadow: var(--shadow);
 }
 
-.autor {
-    font-weight: bold;
-    color: var(--primary); 
-    font-style: normal;    
-    margin-top: 10px;
-    display: block;
-}
+.autor { font-weight: bold; color: var(--primary); font-style: normal; margin-top: 10px; display: block; }
 
-/* --- NEWSLETTER (Nivel 6) --- */
 .newsletter-section {
-    background-color: var(--primary); /* Fondo oscuro */
+    background-color: var(--primary);
     color: white;
     padding: 80px 20px;
     text-align: center;
-    border-radius: 20px 20px 0 0; /* Bordes redondeados arriba */
+    border-radius: 20px 20px 0 0;
 }
 
 .newsletter-section h2 { margin-top: 0; color: var(--accent); }
@@ -236,18 +234,63 @@ button:hover { background-color: var(--accent); color: var(--primary); }
 }
 
 .formulario-alineado button {
-    margin-top: 0; /* Quitamos el margen del botón global */
+    margin-top: 0;
     background-color: var(--accent);
     color: var(--primary);
 }
 
-/* --- FOOTER --- */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #00251a; /* Casi negro */
+    background-color: #00251a;
     color: rgba(255,255,255,0.6);
     font-size: 0.9rem;
 }
 
 footer a { color: var(--accent); text-decoration: none; }
+
+/* --- AQUÍ COMIENZA LA RESPONSIVIDAD (MEDIA QUERIES) --- */
+/* Esta es la parte clave para tu entregable */
+
+@media (max-width: 768px) {
+    
+    /* 1. Ajustes Generales */
+    body {
+        background-color: #e0f2f1; /* Cambio sutil de fondo en móvil */
+    }
+
+    h1 { font-size: 2rem; } /* Título más pequeño */
+
+    /* 2. Navegación Vertical */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    nav a { margin: 5px 0; }
+
+    /* 3. Transformación de Columnas a Filas (Tu Tarea) */
+    .contenedor {
+        flex-direction: column; /* De lado a lado -> Uno abajo del otro */
+        align-items: center;
+    }
+
+    .caja {
+        width: 100%;           /* Ocupan todo el ancho disponible */
+        margin-bottom: 20px;   /* Espacio entre ellas */
+    }
+
+    /* Ajuste para tus tarjetas de Kaan Journey también */
+    .grid-tarjetas {
+        flex-direction: column;
+    }
+
+    .formulario-alineado {
+        flex-direction: column;
+    }
+    
+    .formulario-alineado input {
+        width: 100%;
+    }
+}
